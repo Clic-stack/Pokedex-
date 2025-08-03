@@ -1,0 +1,491 @@
+.pokecard {
+    border-radius: 25px;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    border: 5px solid;
+    overflow: visible;
+}
+
+.pokecard__header {
+    position: relative;
+    overflow: visible;
+    border-radius: 20px;
+    padding-top: 3em;
+}
+
+.pokecard__header-img {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(100px, 60%, 180px); 
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+    display: block;
+    width: 65%;
+    margin: 0 auto;
+}
+
+.pokecard:hover .pokecard__header-img {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.pokecard__body {
+  padding: 1.15em;
+  margin-top: 150px;
+  text-align: center;
+}
+
+.pokecard__body-name {
+  font-size: 2.5em;
+  font-weight: 600;
+  margin: 0;
+}
+
+.pokecard__body-types {
+  font-size: 1.75em;
+  font-weight: normal;
+  margin: 0;
+  color: #444;
+}
+
+.pokecard__body-types-label {
+  margin: 10px;
+  color: #999;
+}
+
+.pokecard__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  border-top: 1px solid #ccc;
+  font-size: 1.25rem;
+  padding-top: 1em;
+  margin-top: 1em;
+  text-align: center;
+}
+
+.pokecard__stats-item {
+  text-transform: uppercase;
+  padding: 1em;
+}
+
+.pokecard__stats-item span {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.pokecard.type--normal {
+  border-image: linear-gradient(181.51deg, #735259 -6.44%, #BC6B7C 121.95%, #7C3F4C 186.11%) 1;
+  color: #7C3F4C;
+}
+
+.pokecard.type--normal .pokecard__stats-item span {
+  color: #7C3F4C;
+}
+
+.pokecard.type--fighting {
+  border-image: linear-gradient(176.83deg, #96402A -8.78%, #F1613C 169.09%, #CB735D 242.33%) 1;
+  color: #96402A;
+}
+
+.pokecard.type--fighting .pokecard__stats-item span {
+  color: #96402A;
+}
+
+.pokecard.type--flying {
+  border-image: linear-gradient(177.03deg, #3A75BB -11.97%, #82A4E3 57.49%, #B0C8FF 135.64%) 1;
+  color: #82A4E3;
+}
+
+.pokecard.type--flying .pokecard__stats-item span {
+  color: #82A4E3;
+}
+
+.pokecard.type--poison {
+  border-image: linear-gradient(177.03deg, #5B3184 -11.97%, #A564E3 71.28%, #CE9BFF 135.64%) 1;
+  color: #5B3184;
+}
+
+.pokecard.type--poison .pokecard__stats-item span {
+  color: #5B3184;
+}
+
+.pokecard.type--ground {
+  border-image: linear-gradient(179.75deg, #654008 -19.96%, #895C1A 43.67%, #D69638 138.4%) 1;
+  color: #654008;
+}
+
+.pokecard.type--ground .pokecard__stats-item span {
+  color: #654008;
+}
+
+.pokecard.type--rock {
+  border-image: linear-gradient(177.03deg, #7E7E7E -11.97%, #8D8D94 57.49%, #D3D3D3 135.64%) 1;
+  color: #8D8D94;
+}
+
+.pokecard.type--rock .pokecard__stats-item span {
+  color: #8D8D94;
+}
+
+.pokecard.type--bug {
+  border-image: linear-gradient(177.56deg, #62DB60 -58.92%, #3BB039 16.57%, #AAFFA8 209.53%) 1;
+  color: #3BB039;
+}
+
+.pokecard.type--bug .pokecard__stats-item span {
+  color: #3BB039;
+}
+
+.pokecard.type--ghost {
+  border-image: linear-gradient(177.03deg, #323569 -11.97%, #454AA8 57.49%, #787DDA 135.64%) 1;
+  color: #787DDA;
+}
+
+.pokecard.type--ghost .pokecard__stats-item span {
+  color: #787DDA;
+}
+
+.pokecard.type--steel {
+  border-image: linear-gradient(179.75deg, #5E736C -19.96%, #728881 43.67%, #A8A8A8 138.4%) 1;
+  color: #5E736C;
+}
+
+.pokecard.type--steel .pokecard__stats-item span {
+  color: #5E736C;
+}
+
+.pokecard.type--fire {
+  border-image: linear-gradient(176.37deg, #F96D6F -32.26%, #E35825 22.55%, #E8AE1B 125.72%) 1;
+  color: #E35825;
+}
+.pokecard.type--fire .pokecard__stats-item span {
+  color: #E35825;
+}
+
+.pokecard.type--water {
+  border-image: linear-gradient(179.57deg, #133258 -70.14%, #1479FB 56.16%, #82B2F1 214.85%) 1;
+  color: #133258;
+}
+.pokecard.type--water .pokecard__stats-item span {
+  color: #133258;
+}
+
+.pokecard.type--grass {
+  border-image: linear-gradient(178.92deg, #7EC6C5 0.92%, #ABDAC6 47.96%, #CAE099 99.08%) 1;
+  color: #65a3a2;
+  
+}
+.pokecard.type--grass .pokecard__stats-item span {
+  color: #65a3a2;
+}
+
+.pokecard.type--electric {
+  border-image: linear-gradient(179.75deg, #0C1395 -19.96%, #2B319B 43.67%, #7075D9 138.4%) 1;
+  color: #2B319B;
+}
+.pokecard.type--electric .pokecard__stats-item span {
+  color: #2B319B;
+}
+
+.pokecard.type--psychic {
+  border-image: linear-gradient(177.03deg, #E75480 -11.97%, #F78DA7 57.49%, #FFC1CC 135.64%) 1;
+  color: #E75480;
+}
+.pokecard.type--psychic .pokecard__stats-item span {
+  color: #E75480;
+}
+
+.pokecard.type--ice {
+  border-image: linear-gradient(177.03deg, #6FBEDF -11.97%, #64CBF5 47.77%, #BDEBFE 136.72%) 1;
+  color: #6FBEDF;
+}
+.pokecard.type--ice .pokecard__stats-item span {
+  color: #6FBEDF;
+}
+
+.pokecard.type--dragon {
+  border-image: linear-gradient(179.75deg, #478A93 -19.96%, #56A4AE 43.67%, #A2BEC1 138.4%) 1;
+  color: #478A93;
+}
+.pokecard.type--dragon .pokecard__stats-item span {
+  color: #478A93;
+}
+
+.pokecard.type--dark {
+  border-image: linear-gradient(177.03deg, #030706 -11.97%, #0D1211 57.49%, #5A5E5D 135.64%) 1;
+  color: #030706;
+}
+.pokecard.type--dark .pokecard__stats-item span {
+  color: #030706;
+}
+
+.pokecard.type--fairy {
+  border-image: linear-gradient(179.75deg, #971B45 -19.96%, #C23867 43.67%, #CD7D98 138.4%) 1;
+  color: #971B45;
+}
+.pokecard.type--fairy .pokecard__stats-item span {
+  color: #971B45;
+}
+
+.pokecard.type--stellar {
+  border-image: linear-gradient(177.03deg, #4B0082 -11.97%, #8A2BE2 57.49%, #DDA0DD 135.64%) 1;
+  color: #DDA0DD;
+}
+.pokecard.type--stellar .pokecard__stats-item span {
+  color: #DDA0DD;
+}
+
+.pokecard.type--unknown {
+  border-image: linear-gradient(177.03deg, #696969 -11.97%, #A9A9A9 57.49%, #D3D3D3 135.64%) 1;
+  color: #696969;
+}
+.pokecard.type--unknown .pokecard__stats-item span {
+  color: #696969;
+}
+
+.pokecard.type--normal .pokecard__header {
+  background: linear-gradient(181.51deg, #735259 -6.44%, #BC6B7C 121.95%, #7C3F4C 186.11%);
+}
+
+.pokecard.type--fighting .pokecard__header {
+  background: linear-gradient(176.83deg, #96402A -8.78%, #F1613C 169.09%, #CB735D 242.33%);
+}
+
+.pokecard.type--flying .pokecard__header {
+  background: linear-gradient(177.03deg, #3A75BB -11.97%, #82A4E3 57.49%, #B0C8FF 135.64%);
+}
+
+.pokecard.type--poison .pokecard__header {
+  background: linear-gradient(177.03deg, #5B3184 -11.97%, #A564E3 71.28%, #CE9BFF 135.64%);
+}
+
+.pokecard.type--ground .pokecard__header {
+  background: linear-gradient(179.75deg, #654008 -19.96%, #895C1A 43.67%, #D69638 138.4%);
+}
+
+.pokecard.type--rock .pokecard__header {
+  background: linear-gradient(177.03deg, #7E7E7E -11.97%, #8D8D94 57.49%, #D3D3D3 135.64%);
+}
+
+.pokecard.type--bug .pokecard__header {
+  background: linear-gradient(177.56deg, #62DB60 -58.92%, #3BB039 16.57%, #AAFFA8 209.53%);
+}
+
+.pokecard.type--ghost .pokecard__header {
+  background: linear-gradient(177.03deg, #323569 -11.97%, #454AA8 57.49%, #787DDA 135.64%);
+}
+
+.pokecard.type--steel .pokecard__header {
+  background: linear-gradient(179.75deg, #5E736C -19.96%, #728881 43.67%, #A8A8A8 138.4%);
+}
+
+.pokecard.type--fire .pokecard__header {
+  background: linear-gradient(176.37deg, #F96D6F -32.26%, #E35825 22.55%, #E8AE1B 125.72%);
+}
+
+.pokecard.type--water .pokecard__header {
+  background: linear-gradient(179.57deg, #133258 -70.14%, #1479FB 56.16%, #82B2F1 214.85%);
+}
+
+.pokecard.type--grass .pokecard__header {
+  background: linear-gradient(178.92deg, #7EC6C5 0.92%, #ABDAC6 47.96%, #CAE099 99.08%);
+}
+
+.pokecard.type--electric .pokecard__header {
+  background: linear-gradient(179.75deg, #0C1395 -19.96%, #2B319B 43.67%, #7075D9 138.4%);
+}
+
+.pokecard.type--psychic .pokecard__header {
+  background: linear-gradient(177.03deg, #E75480 -11.97%, #F78DA7 57.49%, #FFC1CC 135.64%);
+}
+
+.pokecard.type--ice .pokecard__header {
+  background: linear-gradient(177.03deg, #6FBEDF -11.97%, #64CBF5 47.77%, #BDEBFE 136.72%);
+}
+
+.pokecard.type--dragon .pokecard__header {
+  background: linear-gradient(179.75deg, #478A93 -19.96%, #56A4AE 43.67%, #A2BEC1 138.4%);
+}
+
+.pokecard.type--dark .pokecard__header {
+  background: linear-gradient(177.03deg, #030706 -11.97%, #0D1211 57.49%, #5A5E5D 135.64%);
+}
+
+.pokecard.type--fairy .pokecard__header {
+  background: linear-gradient(179.75deg, #971B45 -19.96%, #C23867 43.67%, #CD7D98 138.4%);
+}
+
+.pokecard.type--stellar .pokecard__header {
+  background: linear-gradient(177.03deg, #4B0082 -11.97%, #8A2BE2 57.49%, #DDA0DD 135.64%);
+}
+
+.pokecard.type--unknown .pokecard__header {
+  background: linear-gradient(177.03deg, #696969 -11.97%, #A9A9A9 57.49%, #D3D3D3 135.64%);
+}
+
+.pokecard.type--shadow .pokecard__header {
+  background: linear-gradient(177.03deg, #2F4F4F -11.97%, #556B2F 57.49%, #8FBC8F 135.64%);
+}
+
+@media (max-width: 1024px) {
+  .pokecard__header-img {
+    width: 70%;
+    top: -15px;
+  }
+
+  .pokecard__body {
+    margin-top: 170px;
+  }
+
+  .pokecard__body-name {
+    font-size: 2.25em;
+  }
+
+  .pokecard__body-types {
+    font-size: 1.5em;
+  }
+
+  .pokecard__stats {
+    font-size: 1.1rem;
+  }
+
+  .pokecard__stats-item span {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 896px) {
+  .pokecard__header-img {
+    width: 70%;
+    top: -35px;
+  }
+
+  .pokecard__body {
+    margin-top: 150px;
+  }
+
+  .pokecard__body-name {
+    font-size: 2.25em;
+  }
+
+  .pokecard__body-types {
+    font-size: 1.5em;
+  }
+
+  .pokecard__stats {
+    font-size: 1.1rem;
+  }
+
+  .pokecard__stats-item span {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pokecard {
+    padding: 8px;
+    border-radius: 20px;
+  }
+
+  .pokecard__header-img {
+    top: -30px;
+    width: 45%;
+  }
+
+  .pokecard__body {
+    margin-top: 250px;
+    padding: 1em;
+  }
+
+  .pokecard__body-name {
+    font-size: 2em;
+  }
+
+  .pokecard__body-types {
+    font-size: 1.25em;
+  }
+
+  .pokecard__stats {
+    font-size: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .pokecard__stats-item span {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 530px) {
+  .pokecard {
+    padding: 8px;
+    border-radius: 20px;
+  }
+
+  .pokecard__header-img {
+    top: -30px;
+    width: 50%;
+  }
+
+  .pokecard__body {
+    margin-top: 150px;
+    padding: 1em;
+  }
+
+  .pokecard__body-name {
+    font-size: 2em;
+  }
+
+  .pokecard__body-types {
+    font-size: 1.25em;
+  }
+
+  .pokecard__stats {
+    font-size: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .pokecard__stats-item span {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .pokecard {
+    padding: 8px;
+    border-radius: 20px;
+  }
+
+  .pokecard__header-img {
+    top: -30px;
+    width: 60%;
+  }
+
+  .pokecard__body {
+    margin-top: 120px;
+    padding: 1em;
+  }
+
+  .pokecard__body-name {
+    font-size: 2em;
+  }
+
+  .pokecard__body-types {
+    font-size: 1.25em;
+  }
+
+  .pokecard__stats {
+    font-size: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .pokecard__stats-item span {
+    font-size: 1.25rem;
+  }
+}

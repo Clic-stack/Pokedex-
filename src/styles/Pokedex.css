@@ -1,0 +1,155 @@
+.Pokedex {
+  background-color: rgba(128, 128, 128, 0.11);
+  display: block;
+  width: auto;
+  place-content: center;
+  background-size: contain;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+.Pokedex__types {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: repeat(auto-fill, minmax(350px, 1fr));
+  padding: 2em;
+  gap: 1em;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.Pokedex__types.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+
+}
+
+.type-button {
+  background-color: cornflowerblue;
+  padding: 10px 20px;
+  margin: 5px;
+  width: 23vh;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: cursive;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.type-button.type--bug {
+  background-color: #206e20;
+}
+.type-button.type--dark {
+  background-color: rgb(0, 0, 0);
+}
+.type-button.type--dragon {
+  background-color: #352e64;
+}
+.type-button.type--electric {
+  background-color: #dfb81d;
+}
+.type-button.type--fairy {
+  background-color: #dd1f8b;
+}
+.type-button.type--fighting {
+  background-color: #e63a31;
+}
+.type-button.type--fire {
+  background-color: #f86407fd;
+}
+.type-button.type--flying {
+  background-color: #5542e9;
+}
+.type-button.type--ghost {
+  background-color: #b69fee;
+}
+.type-button.type--grass {
+  background-color: #159c27;
+}
+.type-button.type--ground {
+  background-color: #665334;
+}
+.type-button.type--ice {
+  background-color: #316e85;
+}
+.type-button.type--normal {
+  background-color: #e72e75;
+}
+.type-button.type--poison {
+  background-color: #632488;
+}
+.type-button.type--psychic {
+  background-color: #a11745;
+}
+.type-button.type--rock {
+  background-color: #3b3a38b2;
+}
+.type-button.type--steel {
+  background-color: #940b0b;
+}
+.type-button.type--water {
+  background-color: #3d6cb6;
+}
+
+.type-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  filter: brightness(110%);
+}
+
+.type-button.active {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  filter: brightness(85%);
+}
+
+.close-button {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ff4d4d;
+  color: white;
+  font-size: 24px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #cc0000;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .close-button {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .close-button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    top: 10px;
+  }
+}

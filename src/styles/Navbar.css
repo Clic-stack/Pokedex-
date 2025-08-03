@@ -1,0 +1,250 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background: linear-gradient(135deg, #ffcd05e7, #3b4ccad8, #ff0000d2);
+  color: #fff;
+  padding: 12px 24px;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar__logo h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: 'Pokemon Solid', cursive;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+  transition: transform 0.3s ease;
+}
+
+.navbar__logo h1:hover {
+  transform: scale(1.05);
+}
+
+.navbar__menu-icon {
+  font-size: 3rem;
+  cursor: pointer;
+  color: #fff;
+  margin-top: -90px;
+  margin-left: 180px;
+  margin-bottom: 50px;
+  transition: transform 0.3s ease;
+}
+
+.navbar__menu-icon:hover {
+  transform: scale(1.2);
+}
+
+.navbar__links {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.85);
+  width: 220px;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  padding: 20px;
+  border-radius: 0 10px 10px 0;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar__links.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.navbar__links li {
+  width: 100%;
+  text-align: center;
+  list-style: none;
+}
+
+.navbar__links a,
+.navbar__link,
+.navbar__btn {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffcb05;
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar__links a:hover,
+.navbar__link:hover,
+.navbar__btn:hover {
+  color: #fff;
+  background-color: #3b4cca;
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+
+.navbar__btn {
+  background-color: #ff0000;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.navbar__dropdown {
+  position: relative;
+}
+
+.navbar__submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #3b4cca;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navbar__dropdown:hover .navbar__submenu {
+  display: flex;
+}
+
+.navbar__submenu li {
+  top: 80px;
+  left: 0;
+  width: 220px;
+  background-color: #3b4cca;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.navbar__submenu li a {
+  color: #ffcb05;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar__submenu li a:hover {
+  color: #fff;
+}
+
+.navbar__search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.icon__search {
+  font-size: 1.2rem;
+  color: #3b4cca;
+}
+
+.navbar__input {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 2px solid #3b4cca;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.navbar__input:focus {
+  border-color: #ffcb05;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__logo h1 {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .navbar__menu-icon {
+    font-size: 2.5rem;
+    margin-top: -72px;
+    align-self: flex-end;
+  }
+
+  .navbar__links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 999;
+  }
+
+  .navbar__links.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .navbar__links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar__search {
+    width: 100%;
+    justify-content: center;
+    margin-top: -20px;
+    margin-bottom: 40px;
+  }
+
+  .navbar__input {
+    width: 80%;
+  }
+
+  .navbar__submenu {
+    position: static;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .navbar__submenu li {
+    background-color: transparent;
+    padding: 10px 0;
+  }
+
+  .navbar__submenu li a {
+    font-size: 1.1rem;
+  }
+}
+

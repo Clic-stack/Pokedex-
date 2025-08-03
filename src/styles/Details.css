@@ -1,0 +1,143 @@
+.details {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2em;
+  border-radius: 20px;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);
+}
+
+.details__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.details__back-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.details__back-button:hover {
+  transform: scale(1.1);
+}
+
+.details__image {
+  display: block;
+  margin: 0 auto;
+  width: clamp(150px, 50%, 400px);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.details__title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 1em 0 0.5em;
+  text-transform: capitalize;
+}
+
+.details__id {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ffcb05;
+  margin-bottom: 1em;
+}
+
+.details__section {
+  margin: 2em 0;
+}
+
+.details__section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+  color: #ffcb05;
+}
+
+.details__types span,
+.details__abilities li,
+.details__stats li,
+.details__moves li {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5em 1em;
+  margin: 0.3em;
+  border-radius: 10px;
+  display: inline-block;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.details__stats li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.details__moves {
+  columns: 2;
+  column-gap: 2em;
+}
+
+.stat-bar {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 20px;
+  margin-top: 5px;
+}
+
+.stat-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: white;
+  padding-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .details {
+    padding: 1em;
+  }
+
+  .details__title {
+    font-size: 2rem;
+  }
+
+  .details__image {
+    width: 80%;
+  }
+
+  .details__moves {
+    columns: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .details {
+    padding: 1.5em;
+  }
+
+  .details__title {
+    font-size: 2.25rem;
+  }
+
+  .details__image {
+    width: 60%;
+  }
+}

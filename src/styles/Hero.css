@@ -1,0 +1,131 @@
+.hero {
+  display: grid;
+  height: 50vh;
+  width: auto;
+  place-content: center;
+  background-color: rgb(51, 75, 87);
+  position: relative;
+  position: relative;
+}
+
+.hero__content {
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+  color: #E0E0E0;
+  background-image: url('/public/images/45fa6410b95886197ed68b55d081d669.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-top: 3vh;
+}
+
+.hero__welcome {
+  font-size: 40px;
+  margin-top: -3vh;
+  width: 100%; 
+  z-index: 10; 
+  font-family: cursive;
+}
+
+.hero__ask {
+  text-align: center;
+  font-size: 35px;
+  margin-top: 26vh;
+  width: 100%; 
+  z-index: 10; 
+  font-family: cursive;
+
+}
+
+.btn__pokedex {
+  background-color: #FF7043;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: -7vh;
+  margin: 5px;
+  gap: 3em;
+
+  .btn__pokedex:hover {
+    background-color: #81C784;
+  }
+}
+
+.btn__exit {
+  background-color: #81C784;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: -7vh;
+  margin: 5px;
+  gap: 3em;
+
+  .btn__exit:hover {
+    background-color: #FF7043;
+  }
+}
+
+@media (max-width:1024px) {
+    .hero{
+    height: 70vh;
+    .hero__content {
+      margin-top: none;
+    }
+
+    .hero__welcome {
+      font-size: 35px;
+      margin-top: -5vh;
+    }
+
+    .hero__ask {
+      font-size: 30px;
+      margin-top: 30vh;
+    }
+
+    .btn__pokedex {
+      margin-top: -2vh;
+    }
+
+    .btn__exit {
+      margin-top: -5vh;
+    }
+  }
+
+}
+
+@media (max-width:767px) {
+  .hero{
+    .hero__content {
+      margin-top: 1vh;
+    }
+
+    .hero__welcome {
+      font-size: 25px;
+      margin-top: -3vh;
+    }
+
+    .hero__ask {
+      font-size: 20px;
+      margin-top: 25vh;
+    }
+
+    .btn__pokedex {
+      font-size: 12px;
+      margin-top: 1vh;
+    }
+
+    .btn__exit {
+      font-size: 12px;
+      margin-top: 1vh;
+    }
+  }
+
+}

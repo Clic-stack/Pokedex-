@@ -1,0 +1,166 @@
+.home{
+    display: grid;
+    height: 100vh;
+    width: auto;
+    place-content: center;
+    background: linear-gradient(90deg, hsla(113, 93%, 27%, 0.7) 0%, hsla(191, 90%, 47%, 0.7) 50%, hsla(0, 88%, 25%, 0.7) 100%), url('/public/images/Pokeball-PNG-Image.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-blend-mode: overlay;
+    position: relative;
+}
+
+.home::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    height: 30px; 
+    background: hsla(205, 46%, 10%, 0.5); 
+    border-radius: 100%; 
+}
+        
+.title {
+    position: absolute;
+    text-align: center;
+    font-size: 50px;
+    color: beige;
+    margin-top: 20vh;
+    width: 100%; 
+    z-index: 10; 
+}
+
+.welcome {
+    position: absolute;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30vh;
+    color: aliceblue;
+    height: 5vh; 
+    width: 100%;
+}
+
+.instruction {
+    position: absolute;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 36vh;
+    color: aliceblue;
+    height: 5vh; 
+    width: 100%;
+}
+
+.box {
+    position: absolute;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-top: 43vh;
+    width: 100%;
+}
+
+.input {
+    font-size: 16px;
+    height: 5vh; 
+    width: 200px;
+    padding: 1em 1em;
+    border: none;
+    outline: none;
+    border-radius: 4px 0 0 4px;
+    color: aliceblue;
+    background-color: rgb(233, 163, 58); 
+    cursor: pointer;
+}
+
+.btn {
+    color: white;
+    font-family: cursive;
+    font-size: 17px;
+    text-align: center;
+    height: 5vh;
+    padding: 0 1em;
+    border: none;
+    outline: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    background-color: #4CAF50;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.btn__error {
+    margin-top: .75em;
+    font-family: cursive;
+    background: rgba(216, 96, 48, 0.644);
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+    color: whitesmoke;
+    font-size: large;
+    position: absolute;
+    display: flex;  
+    justify-content: center;
+    text-align: center;
+    margin-top: 20vh;
+    width: 35%;
+}
+
+
+@media (max-width:1024px) {
+    .home::after {
+        bottom: 1vh;
+    }
+    .title {
+        font-size: 40px;
+        margin-top: 26vh;
+    }
+    .welcome {
+        font-size: 30px;
+        margin-top: 32vh;
+    }
+    .instruction {
+        font-size: 25px;
+        margin-top: 36vh;
+    }
+    .box {
+        margin-top: 43vh;
+    }
+
+    .btn__error {
+        margin-top: 15vh;
+        width: fit-content;
+    }
+}
+
+@media (max-width:767px) {
+    .home {
+        background-position: center 90%;
+    }  
+    .home::after {
+        bottom: 1vh;
+    }
+    .title {
+        font-size: 30px;
+        margin-top: 5vh;
+    }
+    .welcome {
+        font-size: 20px;
+        margin-top: 15vh;
+    }
+    .instruction {
+        font-size: 15px;
+        margin-top: 20vh;
+    }
+    .box {
+        margin-top: 25vh;
+    }
+
+    .btn__error {
+        margin-top: 18vh;
+        width: fit-content;
+    }
+}
