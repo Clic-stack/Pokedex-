@@ -148,7 +148,7 @@ Este proyecto refuerza habilidades clave como:
 1. Clona este repositorio:
 
 ```bash
-git clone https://github.com/Clic-stack/Pokedex.git
+git clone https://github.com/Clic-stack/Pokedex-.git
 ```
 
 2. Instala las dependencias:
@@ -320,7 +320,7 @@ This project reinforces key skills such as:
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/Clic-stack/Pokedex.git
+git clone https://github.com/Clic-stack/Pokedex-.git
 ```
 
 2. Install dependencies:
@@ -337,3 +337,4 @@ npm run dev
 
 ## 🎨Author
 Developed by Clio Salgado as part of the React module at Academlo, with the goal of strengthening skills in TypeScript, frontend development, API consumption, global state management, and modular design.
+
