@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useName } from "../context/nameContext"
 import { useNavigate } from "react-router"
 import '../styles/Home.css'
@@ -10,7 +10,12 @@ function Home() {
 
   const {name, getName} = useName()
 
-  
+  useEffect(() => {
+    if (name) {
+      navigate('/pokedex')
+    }
+  }, [name, navigate])
+
   const handleSetName = () => {
     const value = inputRef.current?.value.trim()
     setError(null)
