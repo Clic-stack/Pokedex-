@@ -127,3 +127,78 @@
   color: rgba(255, 255, 255, 0.8);
   margin-top: 5px;
 }
+
+@media (max-width: 480px) {
+  .pokeball-loader {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+  }
+
+  .pokeball {
+    width: 80px;
+    height: 80px;
+    border-width: 4px;
+  }
+
+  .pokeball-top {
+    border-bottom-width: 4px;
+  }
+
+  .pokeball-button {
+    width: 20px;
+    height: 20px;
+    border-width: 4px;
+  }
+
+  .loading-title {
+    font-size: 1.5rem;
+  }
+
+  .loading-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 550px) {
+  .loading-content {
+    /* Cambio a fila para que la bola esté al lado del texto y no tape nada */
+    flex-direction: row;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .pokeball-loader {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0; /* Quita el margen inferior en horizontal */
+  }
+
+  .pokeball {
+    width: 70px;
+    height: 70px;
+  }
+
+  .loading-text-group {
+    /* Alinea el texto a la izquierda para que se vea ordenado al lado de la bola */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .loading-title {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+  .loading-subtitle {
+    font-size: 0.85rem;
+    margin-top: 2px;
+  }
+
+  .pokeball-aura {
+    width: 130%;
+    height: 130%;
+  }
+}
