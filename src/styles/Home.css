@@ -187,10 +187,11 @@
   }
 
   .box {
-    margin-top: 1rem;
+    margin-top: 3rem;
     position: relative;
     margin-left: -10rem;
     padding: 0.5em;
+    border: 2px solid red;
   }
 
   .btn {
@@ -206,7 +207,7 @@
     margin-bottom: -25vh;
     height: auto; 
     width: 300px;
-}
+  }
 
   /* Si la Pokebola de fondo estorba el texto, la movemos a un lado */
   .home {
