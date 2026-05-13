@@ -478,170 +478,85 @@
   }
 }
 
+/* --- OPTIMIZACIÓN LANDSCAPE VERTICAL DINÁMICA --- */
 @media (orientation: landscape) and (max-height: 820px) {
-  .pokecard__header-img {
-    top: -40px;
-    width: 40%;
+  .pokecard {
+    /* Cambiamos a Flexbox vertical para controlar el espacio */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 95vh; /* La tarjeta ocupa casi todo el alto de la pantalla */
+    max-height: 500px; /* Evita que se estire demasiado en tablets */
+    border-radius: 20px;
+    overflow: hidden;
+    justify-content: space-between; /* Distribuye el contenido uniformemente */
   }
-  
+
+  .pokecard__header {
+    /* Esta es la clave: el header crecerá para llenar el espacio vacío */
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+    min-height: 100px; /* Asegura un espacio mínimo para la imagen */
+  }
+
+  .pokecard__header-img {
+    /* La imagen ahora es relativa al contenedor que crece */
+    position: static; 
+    transform: none;
+    left: auto;
+    width: auto;
+    height: auto;
+    /* Se ajusta al 90% del contenedor para no tocar los bordes */
+    max-height: 90%; 
+    max-width: 90%;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.3));
+    margin: 0 auto;
+  }
+
+  .pokecard:hover .pokecard__header-img {
+    transform: scale(1.1); /* Efecto de crecimiento sin perder el centrado */
+  }
+
   .pokecard__body {
-    margin-top: 100px; /* Reduce el margen superior */
-    padding: 0.5em;
+    /* ELIMINAMOS el margin-top: 15vh que causaba el hueco */
+    margin-top: 0; 
+    padding: 5px 0;
+    flex-shrink: 0; /* Evita que el texto se aplaste */
   }
 
   .pokecard__body-name {
-    font-size: 1.8em;
+    font-size: clamp(1.2rem, 5vh, 1.8rem);
+    margin: 0;
+  }
+
+  .pokecard__body-types {
+    font-size: clamp(0.8rem, 3vh, 1rem);
+    margin: 2px 0;
   }
 
   .pokecard__stats {
-    grid-template-columns: 1fr 1fr 1fr; /* Más columnas para usar el ancho */
+    /* Mantenemos 3 columnas para ahorrar espacio vertical */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    flex-shrink: 0; 
+  }
+
+  .pokecard__stats-item {
+    padding: 2px;
+    font-size: 0.7rem;
+  }
+
+  .pokecard__stats-item span {
     font-size: 0.9rem;
-  }
-}
-
-@media (orientation: landscape) and (max-height: 800px) {
-  .pokecard__header-img {
-    top: -30px;
-    width: 60%;
-  }
-  
-  .pokecard__body {
-    margin-top: 100px; 
-    padding: 0.5em;
-  }
-
-  .pokecard__body-name {
-    font-size: 1.8em;
-  }
-
-  .pokecard__stats {
-    grid-template-columns: 1fr 1fr 1fr; 
-    font-size: 0.9rem;
-  }
-}
-
-@media (orientation: landscape) and (max-height: 720px) {
-  .pokecard__header-img {
-    top: -40px;
-    width: 45%;
-  }
-  
-  .pokecard__body {
-    margin-top: 100px; 
-    padding: 0.5em;
-  }
-
-  .pokecard__body-name {
-    font-size: 1.8em;
-  }
-
-  .pokecard__stats {
-    grid-template-columns: 1fr 1fr 1fr; 
-    font-size: 0.9rem;
-  }
-}
-
-@media (orientation: landscape) and (max-height: 690px) {
-  .pokecard__header-img {
-    top: -20px;
-    width: 55%;
-  }
-  
-  .pokecard__body {
-    margin-top: 100px; 
-    padding: 0.5em;
-  }
-
-  .pokecard__body-name {
-    font-size: 1.8em;
-  }
-
-  .pokecard__stats {
-    grid-template-columns: 1fr 1fr 1fr; 
-    font-size: 0.9rem;
-  }
-}
-
-@media (orientation: landscape) and (max-height: 540px) {
-  .pokecard__header-img {
-    top: -30px;
-    width: 30%;
-  }
-  
-  .pokecard__body {
-    margin-top: 100px; 
-    padding: 0.5em;
-  }
-
-  .pokecard__body-name {
-    font-size: 1.8em;
-  }
-
-  .pokecard__stats {
-    grid-template-columns: 1fr 1fr 1fr; 
-    font-size: 0.9rem;
-  }
-}
-
-@media (orientation: landscape) and (max-height: 430px) {
-  .pokecard__header-img {
-    top: -25px;
-    width: 50%;
-  }
-  
-  .pokecard__body {
-    margin-top: 100px; 
-    padding: 0.5em;
-  }
-
-  .pokecard__body-name {
-    font-size: 1.8em;
-  }
-
-  .pokecard__stats {
-    grid-template-columns: 1fr 1fr 1fr; 
-    font-size: 0.9rem;
-  }
-}
-
-@media (orientation: landscape) and (max-height: 375px) {
-  .pokecard__header-img {
-    top: -35px;
-    width: 30%;
-  }
-  
-  .pokecard__body {
-    margin-top: 100px; 
-    padding: 0.5em;
-  }
-
-  .pokecard__body-name {
-    font-size: 1.8em;
-  }
-
-  .pokecard__stats {
-    grid-template-columns: 1fr 1fr 1fr; 
-    font-size: 0.9rem;
-  }
-}
-
-@media (orientation: landscape) and (max-height: 344px) {
-  .pokecard__header-img {
-    top: -35px;
-    width: 55%;
-  }
-  
-  .pokecard__body {
-    margin-top: 100px; 
-    padding: 0.5em;
-  }
-
-  .pokecard__body-name {
-    font-size: 1.8em;
-  }
-
-  .pokecard__stats {
-    grid-template-columns: 1fr 1fr 1fr; 
-    font-size: 0.9rem;
+    display: block;
   }
 }
