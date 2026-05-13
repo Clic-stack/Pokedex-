@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router"
+import LoadingScreen from "./LoadingScreen"
 import '../styles/Details.css'
 
 type Types = {
@@ -97,15 +98,15 @@ const statColors: Record<string, string> = {
   "special-defense": "#A7DB8D"
 }
 
-
-
 const baseUrl = 'https://pokeapi.co/api/v2'
 
 function Details() {
   const {name} = useParams()
   const [pokemon, setPokemon] = useState<Pokemon | null>(null)
+  const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(() => {
+    setLoading(true)
     axios.get(`${baseUrl}/pokemon/${name}`)
     .then(res => {
       setPokemon({
@@ -113,7 +114,7 @@ function Details() {
         name: res.data.name,
         types: res.data.types.map((t: Types) => t.type.name),
         abilities: res.data.abilities.map((a: Abilities) => a.ability.name),
-        moves: res.data.moves.map((m: Moves) => m.move.name).slice(0, 20), //Para acortar la cantidad de movimientos de los pokemons
+        moves: res.data.moves.map((m: Moves) => m.move.name), //.slice(0, 20), //Para acortar la cantidad de movimientos de los pokemons
         image: res.data.sprites?.other?.["official-artwork"]?.front_default ?? "Image-not-available.png",
         stats: {
           hp: res.data.stats[0].base_stat,
@@ -124,10 +125,26 @@ function Details() {
           speed: res.data.stats[5].base_stat
         }
       })
+      setTimeout(() => setLoading(false), 3000)
     })
-  }, [])
+    .catch(err => {
+      console.error(err);
+      setLoading(false)
+    })
+  }, [name])
 
-  if (!pokemon) return <p>Loading Pokemon...</p>
+  if (loading) {
+    return <LoadingScreen />
+  }
+
+  if (!pokemon) {
+    return (
+      <div className="error-container">
+        <p>Pokemon not found</p>
+        <Link to="/pokedex">Volver</Link>
+      </div>
+    )
+  }
 
   const getBackgroundStyle = (types: string[]) => {
   const colors = types.map(t => typeColors[t] || "#444")
@@ -146,41 +163,46 @@ function Details() {
 
   return (
     <div className="details" style={getBackgroundStyle(pokemon.types)}>
-      <header className="details__header">
-        <button className="details__back-button">
-          <Link to='/pokedex'>←</Link>
-        </button>
-      </header>
+      
+      {/* COLUMNA IZQUIERDA: Lo visual que se queda fijo */}
+      <div className="details__visual">
+        <header className="details__header">
+          <button className="details__back-button">
+            <Link to='/pokedex'>←</Link>
+          </button>
+        </header>
 
-      <h1 className="details__title">{pokemon.name}</h1>
-      <span className="details__id">#{pokemon.id.toString().padStart(4, '0')}</span>
-      <img src={pokemon.image} alt={pokemon.name} className="details__image" />
-
-      <div className="details__section details__types">
-        <h2>Types</h2>
-        {pokemon.types.map(t => <span key={t}>{t}</span>)}
+        <h1 className="details__title">{pokemon.name}</h1>
+        <span className="details__id">#{pokemon.id.toString().padStart(4, '0')}</span>
+        <img src={pokemon.image} alt={pokemon.name} className="details__image" />
       </div>
 
-      <div className="details__section details__moves">
-        <h2>Moves</h2>
-        <ol>
-          {pokemon.moves.map(m => <li key={m}>{m}</li>)}
-        </ol>
-      </div>
+      {/* COLUMNA DERECHA: Toda la información con scroll */}
+      <div className="details__info-container">
+        
+        <div className="details__section details__types">
+          <h2 className="types__title">Types</h2>
+          <div className="contain__types">
+            {pokemon.types.map(t => <span key={t}>{t}</span>)}
+          </div>
+        </div>
 
-      <div className="details__section details__abilities">
-        <h2>Abilities</h2>
-        <ul>
-          {pokemon.abilities.map(a => <li key={a}>{a}</li>)}
-        </ul>
-      </div>
+        <div className="details__section details__abilities">
+          <h2 className="abilities__title">Abilities</h2>
+          <div className="contain__abilities">
+            <ul className="individual__abilities">
+              {pokemon.abilities.map(a => <li key={a}>{a}</li>)}
+            </ul>
+          </div>
+        </div>
 
-      <div className="details__section details__stats">
-        <h2>Stats</h2>
-          <ul>
-            {Object.entries(pokemon.stats).map(([key, value]) => (
-              <li key={key}>
-                <strong>{key.replace('-', ' ')}:</strong> {value}
+        <div className="details__section details__stats">
+          <h2 className="title__stats">Stats</h2>
+          <div className="contain__stats">
+            <ul>
+              {Object.entries(pokemon.stats).map(([key, value]) => (
+                <li key={key}>
+                  <strong>{key.replace('-', ' ')}:</strong> {value}
                   <div className="stat-bar">
                     <div
                       className="stat-fill"
@@ -188,13 +210,28 @@ function Details() {
                         width: getStatPercentage(value),
                         backgroundColor: statColors[key] || "#ccc"
                       }}
-                      >
-                      <span className="stat-label">{getStatPercentage(value)}</span>
+                    >
+                      {/* Uso de parseFloat para que el texto no sea tan largo */}
+                      <span className="stat-label">{parseFloat(getStatPercentage(value)).toFixed(1)}%</span>
                     </div>
                   </div>
-              </li>
-            ))}
-          </ul>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="details__section details__moves">
+          <h2 className="moves__title">
+            Moves <span style={{ fontSize: '0.8rem', opacity: 0.7 }}>({pokemon.moves.length})</span>
+          </h2>
+          <div className="contain__moves">
+            <ol className="individual__moves">
+              {pokemon.moves.map(m => <li key={m}>{m}</li>)}
+            </ol>
+          </div>
+        </div>
+        
       </div>
     </div>
 

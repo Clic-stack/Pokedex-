@@ -109,7 +109,6 @@
     width: 35%;
 }
 
-
 @media (max-width:1024px) {
     .home::after {
         bottom: 1vh;
@@ -163,4 +162,55 @@
         margin-top: 18vh;
         width: fit-content;
     }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .home {
+    /* Cambia la distribución para que no sea tan alta */
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 2rem; /* Título más pequeño */
+    margin-top: -17vh;
+    position: relative; /* Evita que flote demasiado */
+    margin-left: -12rem;
+  }
+
+  .welcome, .instruction {
+    font-size: 1.1rem;
+    margin-top: 0;
+    position: relative;
+    margin-left: -12rem;
+  }
+
+  .box {
+    margin-top: 1rem;
+    position: relative;
+    margin-left: -10rem;
+    padding: 0.5em;
+  }
+
+  .btn {
+    font-size: 17px;
+    height: 9vh;
+  }
+
+  .btn__error {
+    padding: 5px;
+    margin: 10px;
+    font-size: 1rem;
+    position: column;
+    margin-bottom: -25vh;
+    height: auto; 
+    width: 300px;
+}
+
+  /* Si la Pokebola de fondo estorba el texto, la movemos a un lado */
+  .home {
+    background-position: right -15% center;
+    background-size: contain;
+  }
 }

@@ -127,5 +127,23 @@
       margin-top: 1vh;
     }
   }
+}
 
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero {
+    height: 100vh;
+    .hero__content {
+      margin-top: none;
+    }
+
+    .hero__welcome {
+      font-size: 25px;
+      margin-top: -3vh;
+    }
+
+    .hero__ask {
+      font-size: 20px;
+      margin-top: 40vh;
+    }
+  }
 }

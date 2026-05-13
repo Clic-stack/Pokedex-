@@ -413,16 +413,12 @@
   }
 
   .pokecard__stats {
-    font-size: 1rem;
-    grid-template-columns: 1fr;
-  }
-
-  .pokecard__stats-item span {
-    font-size: 1.25rem;
+    grid-template-columns: 1fr 1fr 1fr; /* Más columnas para usar el ancho */
+    font-size: 0.9rem;
   }
 }
 
-@media (max-width: 530px) {
+@media (max-width: 540px) {
   .pokecard {
     padding: 8px;
     border-radius: 20px;
@@ -430,7 +426,7 @@
 
   .pokecard__header-img {
     top: -30px;
-    width: 50%;
+    width: 55%;
   }
 
   .pokecard__body {
@@ -447,23 +443,19 @@
   }
 
   .pokecard__stats {
-    font-size: 1rem;
-    grid-template-columns: 1fr;
-  }
-
-  .pokecard__stats-item span {
-    font-size: 1.25rem;
+    grid-template-columns: 1fr 1fr 1fr; 
+    font-size: 0.9rem;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
   .pokecard {
     padding: 8px;
     border-radius: 20px;
   }
 
   .pokecard__header-img {
-    top: -30px;
+    top: -10px;
     width: 60%;
   }
 
@@ -481,11 +473,175 @@
   }
 
   .pokecard__stats {
-    font-size: 1rem;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr; 
+    font-size: 0.9rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 820px) {
+  .pokecard__header-img {
+    top: -40px;
+    width: 40%;
+  }
+  
+  .pokecard__body {
+    margin-top: 100px; /* Reduce el margen superior */
+    padding: 0.5em;
   }
 
-  .pokecard__stats-item span {
-    font-size: 1.25rem;
+  .pokecard__body-name {
+    font-size: 1.8em;
+  }
+
+  .pokecard__stats {
+    grid-template-columns: 1fr 1fr 1fr; /* Más columnas para usar el ancho */
+    font-size: 0.9rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 800px) {
+  .pokecard__header-img {
+    top: -30px;
+    width: 60%;
+  }
+  
+  .pokecard__body {
+    margin-top: 100px; 
+    padding: 0.5em;
+  }
+
+  .pokecard__body-name {
+    font-size: 1.8em;
+  }
+
+  .pokecard__stats {
+    grid-template-columns: 1fr 1fr 1fr; 
+    font-size: 0.9rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 720px) {
+  .pokecard__header-img {
+    top: -40px;
+    width: 45%;
+  }
+  
+  .pokecard__body {
+    margin-top: 100px; 
+    padding: 0.5em;
+  }
+
+  .pokecard__body-name {
+    font-size: 1.8em;
+  }
+
+  .pokecard__stats {
+    grid-template-columns: 1fr 1fr 1fr; 
+    font-size: 0.9rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 690px) {
+  .pokecard__header-img {
+    top: -20px;
+    width: 55%;
+  }
+  
+  .pokecard__body {
+    margin-top: 100px; 
+    padding: 0.5em;
+  }
+
+  .pokecard__body-name {
+    font-size: 1.8em;
+  }
+
+  .pokecard__stats {
+    grid-template-columns: 1fr 1fr 1fr; 
+    font-size: 0.9rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 540px) {
+  .pokecard__header-img {
+    top: -30px;
+    width: 30%;
+  }
+  
+  .pokecard__body {
+    margin-top: 100px; 
+    padding: 0.5em;
+  }
+
+  .pokecard__body-name {
+    font-size: 1.8em;
+  }
+
+  .pokecard__stats {
+    grid-template-columns: 1fr 1fr 1fr; 
+    font-size: 0.9rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 430px) {
+  .pokecard__header-img {
+    top: -25px;
+    width: 50%;
+  }
+  
+  .pokecard__body {
+    margin-top: 100px; 
+    padding: 0.5em;
+  }
+
+  .pokecard__body-name {
+    font-size: 1.8em;
+  }
+
+  .pokecard__stats {
+    grid-template-columns: 1fr 1fr 1fr; 
+    font-size: 0.9rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 375px) {
+  .pokecard__header-img {
+    top: -35px;
+    width: 30%;
+  }
+  
+  .pokecard__body {
+    margin-top: 100px; 
+    padding: 0.5em;
+  }
+
+  .pokecard__body-name {
+    font-size: 1.8em;
+  }
+
+  .pokecard__stats {
+    grid-template-columns: 1fr 1fr 1fr; 
+    font-size: 0.9rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 344px) {
+  .pokecard__header-img {
+    top: -35px;
+    width: 55%;
+  }
+  
+  .pokecard__body {
+    margin-top: 100px; 
+    padding: 0.5em;
+  }
+
+  .pokecard__body-name {
+    font-size: 1.8em;
+  }
+
+  .pokecard__stats {
+    grid-template-columns: 1fr 1fr 1fr; 
+    font-size: 0.9rem;
   }
 }
